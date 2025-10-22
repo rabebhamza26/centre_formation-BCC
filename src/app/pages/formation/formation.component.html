@@ -1,0 +1,18 @@
+<h2 class="section-title">Nos Formations</h2>
+
+<div class="formations-grid">
+  <div class="formation-card" *ngFor="let f of formations">
+    <div class="image-box">
+      <img [src]="f.image" alt="{{ f.title }}">
+      <span class="price-tag">{{ f.price }}</span>
+
+      <button class="like-btn" [class.liked]="f.liked" (click)="toggleLike(f)">
+        ❤️
+      </button>
+    </div>
+    <div class="content-box">
+      <h5>{{ f.title }}</h5>
+      <p>{{ f.desc }}</p>
+    </div>
+  </div>
+</div>

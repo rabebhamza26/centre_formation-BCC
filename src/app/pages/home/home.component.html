@@ -1,0 +1,351 @@
+<section class="home">
+  <div id="carousel" class="carousel slide">
+  <div class="carousel-indicators">
+    <button *ngFor="let slide of slides; let i = index"
+            [class.active]="i === currentSlide"
+            (click)="goToSlide(i)">
+    </button>
+  </div>
+
+  <div class="carousel-inner">
+    <div *ngFor="let slide of slides; let i = index"
+         class="carousel-item"
+         [class.active]="i === currentSlide">
+      <img [src]="slide.url" class="d-block w-100" alt="Carousel image">
+      <div class="carousel-caption">
+        <h1 class="animated fadeInLeft">{{ slide.title }}</h1>
+        <p class="animated fadeInRight">{{ slide.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" (click)="prevSlide()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Précédent</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" (click)="nextSlide()">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Suivant</span>
+  </button>
+</div>
+
+<!-- Feature Start -->
+<div class="feature-section">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- Feature 1 -->
+      <div class="col-lg-4 col-md-6 feature-card">
+        <div class="feature-item blue-bg">
+          <div class="icon-circle blue-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h4>Formations Certifiées</h4>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="col-lg-4 col-md-6 feature-card">
+        <div class="feature-item pink-bg">
+          <div class="icon-circle pink-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h4>Notre Équipe</h4>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="col-lg-4 col-md-6 feature-card">
+        <div class="feature-item blue-bg">
+          <div class="icon-circle blue-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h4>Cours à votre disposition</h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Feature End -->
+
+<!-- About Start -->
+<div class="about wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Texte -->
+            <div class="col-lg-6 col-md-12">
+                <div class="section-header text-left">
+                    <h2>Bienvenue à notre Cabinet de formation</h2>
+                            <div class="underline mb-3"></div>
+
+                    <p>Best Challenge Center vous ouvre les portes vers un meilleur avenir !</p>
+                </div>
+                <div class="about-text">
+                    <p>
+                        Best Challenge Center est un cabinet de conseil et de formation continue. 
+                        Il a pour mission d’accompagner les entreprises en leur apportant une réponse efficace 
+                        à leurs besoins en matière de formation et de développement des compétences.
+                    </p>
+                    <p>
+                        Nous vous invitons à assister à nos formations, participer à des workshops et événements, 
+                        consulter nos séminaires. Quel que soit votre domaine d'étude, nous sommes à votre disposition 
+                        pour vous guider vers les meilleurs choix.
+                    </p>
+                     <a routerLink="/about">À propos</a>
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="col-lg-6 col-md-12">
+                <div class="about-img">
+                    <img src="assets/images/student.jpg" alt="Best Challenge Center">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- About End -->
+<!--formation-->
+<div class="courses-section container">
+  <h3 class="section-title" >Nos Formations</h3>
+
+  <div class="row">
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let course of courses">
+      <div class="card course-card h-100">
+        <img [src]="course.image" class="card-img-top" [alt]="course.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.title }}</h5>
+          <p class="card-text">{{ course.description }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <small><i class="fa-solid fa-user"></i> {{ course.students }} Student</small>
+          <span class="price">{{ course.price | number:'1.0-0' }} د.ت</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--end-->
+
+<!-- Video Start -->
+<!-- Video Section -->
+<section class="video py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-3 fw-bold">Regardez la vidéo</h2>
+    <p class="lead text-secondary mb-4">
+      Vous êtes passionné par le web mais vous n'avez pas suivi des études dans ce domaine ? 
+      Faites une reconversion professionnelle et suivez notre formation full stack 
+      qui vous permet d'acquérir des bases solides.
+    </p>
+
+    <button 
+      type="button" 
+      class="btn-play" 
+      (click)="openModal('https://www.youtube.com/embed/Maqe7xTQmRs')">
+      <span></span>
+    </button>
+  </div>
+</section>
+
+<!-- Modal -->
+<div 
+  class="modal fade" 
+  [class.show]="showModal" 
+  [style.display]="showModal ? 'block' : 'none'" 
+  tabindex="-1" 
+  role="dialog" 
+  (click)="closeModal()">
+  
+  <div class="modal-dialog modal-lg" role="document" (click)="$event.stopPropagation()">
+    <div class="modal-content border-0 rounded-4 overflow-hidden">
+      <div class="modal-body position-relative p-0">
+        <button 
+          type="button" 
+          class="close position-absolute top-0 end-0 m-3" 
+          (click)="closeModal()" 
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <div class="ratio ratio-16x9">
+          <iframe
+            *ngIf="videoUrl"
+            [src]="videoUrl"
+            allowscriptaccess="always"
+            allow="autoplay"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video End -->
+
+<!--evenement-->
+<section class="evenements section-padding">
+  <div class="container">
+    <h2 class="section-title">Évènements à venir</h2>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6" *ngFor="let event of events">
+        <div class="event-card">
+          <div class="event-date">
+            <span class="day">{{ event.day }}</span>
+            <span class="month">{{ event.month }}</span>
+            <span class="year">{{ event.year }}</span>
+          </div>
+          <div class="event-content">
+            <h4 class="event-title">{{ event.title }}</h4>
+            <p class="event-description">{{ event.description }}</p>
+            <div class="event-info">
+              <span class="time"><i class="bi bi-clock"></i> {{ event.time }}</span>
+              <span class="location"><i class="bi bi-geo-alt"></i> {{ event.location }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn-see-more"><a routerLink="/evenement">Voir plus</a></button>
+    </div>
+  </div>
+</section>
+
+<!--end evt-->
+
+<!-- Fact Start -->
+<div class="fact">
+    <div class="container-fluid">
+        <div class="row counters fact-row-single">
+            <div class="col-6 col-md-3">
+                <div class="fact-item fact-text">
+                    <h2 data-toggle="counter-up">40</h2>
+                    <p>INSTRUCTEURS PROFESSIONNELS</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="fact-item fact-text">
+                    <h2 data-toggle="counter-up">20</h2>
+                    <p>DE NOUVEAUX COURS CHAQUE ANNÉE</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="fact-item fact-text">
+                    <h2 data-toggle="counter-up">10</h2>
+                    <p>SÉANCES EN LIGNES TOUS LES MOIS</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="fact-item fact-text">
+                    <h2 data-toggle="counter-up">20</h2>
+                    <p>ENSEIGNANT PROFESSIONNEL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fact End -->
+
+<!-- testimonials -->
+
+<section class="testimonials section">
+  <div class="container">
+    <h2 class="section-title">Ce que disent nos étudiants</h2>
+
+    <div class="testimonials-grid">
+      <!-- Bloc 1 -->
+      <div class="testimonial-card">
+        <h4 class="student-name">Zouhour Ettoumi</h4>
+        <p class="student-role">PHP Developer</p>
+        <div class="testimonial-content">
+          <div class="quote-box">
+            <p>
+              La formation Full Stack PHP que j’ai suivie m’a donné
+              l’opportunité de réaliser mon projet de fin d’étude d’une manière
+              très fluide et cela prouve combien la formation est pertinente en
+              termes de technologies qu’on a travaillées avec ainsi que la
+              méthodologie de travail qu’on a suivie.
+            </p>
+          </div>
+          <img src="assets/images/IMG_1544-92x92.jpg" alt="Zouhour Ettoumi" class="student-img" />
+        </div>
+      </div>
+
+      <!-- Bloc 2 -->
+      <div class="testimonial-card">
+        <h4 class="student-name">Mariem Gharbi</h4>
+        <p class="student-role">Web Developer</p>
+        <div class="testimonial-content">
+          <img src="assets/images/IMG_1602-92x92.jpg" alt="Mariem Gharbi" class="student-img" />
+          <div class="quote-box">
+            <p>
+              Un excellent contenu et des missions qui s'appuient sur vos
+              connaissances, renforcent, puis se développent. J’ai récemment
+              obtenu un nouvel emploi en utilisant PHP et je n’aurais pas pu le
+              faire sans les cours de développement Web professionnel.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc 3 -->
+      <div class="testimonial-card">
+        <h4 class="student-name">Ahmed Ben Salah</h4>
+        <p class="student-role">Frontend Developer</p>
+        <div class="testimonial-content">
+          <div class="quote-box">
+            <p>
+              La formation m’a permis de découvrir des outils modernes comme
+              Angular et TypeScript. Aujourd’hui, je suis capable de concevoir
+              des interfaces dynamiques et réactives pour le web.
+            </p>
+          </div>
+          <img src="assets/images/IMG_1566-92x92.jpg" alt="Ahmed Ben Salah" class="student-img" />
+        </div>
+      </div>
+
+      <!-- Bloc 4 -->
+      <div class="testimonial-card">
+        <h4 class="student-name">Sarra Kacem</h4>
+        <p class="student-role">Software Engineer</p>
+        <div class="testimonial-content">
+          <img src="assets/images/Eqa7SyzIUauQWAtV8n-nh-150x100.jpg" alt="Sarra Kacem" class="student-img" />
+          <div class="quote-box">
+            <p>
+              Grâce à la formation, j’ai acquis des compétences solides en
+              développement logiciel et en gestion de projets. Je recommande
+              vivement cette expérience à tous ceux qui veulent évoluer dans le
+              domaine IT.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="banniere-etudiants">
+    <div class="grille-images">
+        <img src="assets/images/all.jpg" alt="Visages d'étudiants" class="image-principale">
+    </div>
+    <div class="panneau-texte">
+        <h1>Rejoignez nos étudiants.</h1>
+        <a routerLink="/contact" class="bouton-action">rejoindre-nous maintenant</a>
+    </div>
+</div>
+
+
+</section>

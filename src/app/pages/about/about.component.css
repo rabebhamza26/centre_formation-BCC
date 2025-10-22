@@ -1,0 +1,122 @@
+.about-section {
+  background-color: #fff;
+  color: #0a2342;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #0a2342;
+  position: relative;
+}
+
+.underline {
+  width: 50px;
+  height: 2px;
+  background-color: #0a2342;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  color: #333;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.1rem;
+  }
+  .underline {
+    width: 40px;
+  }
+}
+
+
+.why-section {
+  background-color: #f5f2f2;
+  color: #0a2342;
+}
+
+.main-title {
+  font-weight: 700;
+  color: #0a2342;
+  font-size: 2.2rem;
+
+}
+
+.subtitle {
+  color: #555;
+  font-size: 0.9rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.why-card {
+  background-color: #f9fbff;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-weight: 500;
+  color: #0a2342;
+}
+
+.underline {
+  width: 50px;
+  height: 2px;
+  background-color: #0a2342;
+}
+
+
+ .icon-box {
+  font-size: 2.8rem;
+  color: #c21807;
+  border: 3px solid rgb(218, 217, 214); /* Bordure invisible au départ */
+  border-radius: 50%; /* Cercle parfait */
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  transition: all 0.3s ease;
+}
+
+/* Bordure visible et effet au survol */
+.icon-box:hover {
+  border-color: #bbbdc0; /* Bordure visible au hover */
+  background-color: #0a2342;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(194, 24, 7, 0.3);
+}
+
+
+
+.why-card p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 1.5rem;
+  }
+
+  .icon-box {
+    font-size: 2.2rem;
+  }
+
+  .underline {
+    width: 40px;
+  }
+}

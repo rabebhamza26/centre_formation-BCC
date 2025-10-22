@@ -1,0 +1,20 @@
+<div class="events-container">
+  <div class="event-card" *ngFor="let event of events">
+    <div class="calendar-box">
+      <div class="date-header">
+        <span class="date-day">{{ event.date.day }}</span>
+        <span class="date-month">{{ event.date.month }}</span>
+      </div>
+      <div class="date-year">{{ event.date.year }}</div>
+    </div>
+    
+    <div class="event-content">
+      <h2 class="event-title">{{ event.title }}</h2>
+      <p class="event-description" [innerHTML]="event.description"></p>
+      
+      <div class="event-info">
+        <strong>{{ event.time }}</strong> | <strong>{{ event.location }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

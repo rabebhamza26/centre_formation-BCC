@@ -1,0 +1,58 @@
+<div class="contact-section container">
+  <div class="row">
+    <!-- Partie gauche -->
+    <div class="col-md-4 contact-info">
+      <div class="info-box">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>
+          <strong>Adresse:</strong><br>
+          Avenue Habib Bourguiba, Sousse résidence, 6éme étage app N605
+        </p>
+      </div>
+
+      <div class="info-box">
+        <i class="fa fa-envelope"></i>
+        <p>
+          <strong>Email:</strong><br>
+          contact&#64;best-challenge.com
+        </p>
+      </div>
+
+      <div class="info-box">
+        <i class="fa fa-phone"></i>
+        <p>
+          <strong>Téléphone:</strong><br>
+          +216 56 835 450
+        </p>
+      </div>
+
+      <div class="social-box">
+        <a href="https://www.facebook.com/BestChallengeCenter/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/best.challenge.center/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/best-challenge-center/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <!-- Partie droite -->
+    <div class="col-md-8 contact-form">
+      <h3>Veuillez nous <span>Contactez</span></h3>
+      <div class="underline"></div>
+
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <div class="form-row">
+          <input type="text" placeholder="Name*" name="name" ngModel required>
+          <input type="email" placeholder="Email*" name="email" ngModel required>
+        </div>
+
+        <div class="form-row">
+          <input type="text" placeholder="Subject*" name="subject" ngModel required>
+          <input type="text" placeholder="Phone" name="phone" ngModel>
+        </div>
+
+        <textarea placeholder="Message*" name="message" ngModel required></textarea>
+
+        <button type="submit" class="send-btn">SEND MESSAGE</button>
+      </form>
+    </div>
+  </div>
+</div>
