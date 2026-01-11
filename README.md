@@ -23,4 +23,7 @@ Le site contient les sections suivantes :
 - Navigation fluide entre toutes les sections.  
 - Design moderne et responsive adapté aux mobiles et tablettes.  
 - Pages interactives pour formations et événements.  
-- Formulaire de contact fonctionnel. 
+- Formulaire de contact fonctionnel.
+
+  <img width="1253" height="429" alt="image" src="https://github.com/user-attachments/assets/35c59385-c72d-4c4b-b339-ac9411585870" />
+
